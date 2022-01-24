@@ -1,0 +1,23 @@
+user@user-VirtualBox:~$ mc &
+[1] 1671
+user@user-VirtualBox:~$ ps axuf | grep mc
+                                         user        1671  0.0  0.2  31028  6264 pts/0    T    00:43   0:00          \_
+mc
+user        1688  0.0  0.0  20200   724 pts/0    S+   00:47   0:00          \_ grep --color=auto mc
+
+[1]+  Stopped                 mc
+user@user-VirtualBox:~$ kill -9 1688
+-bash: kill: (1688) - No such process
+user@user-VirtualBox:~$ mc &
+[2] 1689
+user@user-VirtualBox:~$  ps axuf | grep mc
+                                          user        1671  0.0  0.2  31028  6264 pts/0    T    00:43   0:00          \_ mc
+user        1689  0.0  0.2  31028  6272 pts/0    T    00:47   0:00          \_ mc
+user        1692  0.0  0.0  20200   732 pts/0    S+   00:47   0:00          \_ grep --color=auto mc
+
+[2]+  Stopped                 mc
+user@user-VirtualBox:~$ kill -9 1671
+[1]-  Killed                  mc
+user@user-VirtualBox:~$  ps axuf | grep mc
+user        1689  0.0  0.2  31028  6272 pts/0    T    00:47   0:00          \_ mc
+user        1695  0.0  0.0  20200   728 pts/0    S+   00:48   0:00          \_ grep --color=auto mc
