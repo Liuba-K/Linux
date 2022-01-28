@@ -1,0 +1,14 @@
+user@user-VirtualBox:~/lesson5$ mkdir common
+user@user-VirtualBox:~/lesson5$ mkdir common/share
+user@user-VirtualBox:~/lesson5$ ls -al ~/lesson5/common
+total 12
+drwxrwxr-x 3 user user 4096 сту 28 21:58 .
+drwxrwxr-x 3 user user 4096 сту 28 21:57 ..
+drwxrwxr-x 2 user user 4096 сту 28 21:58 share
+user@user-VirtualBox:~/lesson5$ chmod +t common/share
+user@user-VirtualBox:~/lesson5$ ls -al ~/lesson5/common
+total 12
+drwxrwxr-x 3 user user 4096 сту 28 21:58 .
+drwxrwxr-x 3 user user 4096 сту 28 21:57 ..
+drwxrwxr-t 2 user user 4096 сту 28 21:58 share
+
