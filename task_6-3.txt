@@ -1,0 +1,7 @@
+user@user-VirtualBox:~/lesson6$ ls -al | awk '{print $1}' | sort | uniq -c
+     10 drwxrwxr-x
+      1 drwxr-xr-x
+      3 -rw-r--r--
+     14 -rw-rw-r--
+     12 -rwxrwxr-x
+      1 total
