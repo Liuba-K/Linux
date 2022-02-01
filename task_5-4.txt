@@ -1,0 +1,42 @@
+user@user-VirtualBox:~/lesson5$ sudo addgroup developer
+[sudo] password for user: 
+Adding group `developer' (GID 1001) ...
+Done.
+user@user-VirtualBox:~/lesson5$ sudo usermod -aG developer user
+user@user-VirtualBox:~/lesson5$ sudo usermod -aG developer user1
+user@user-VirtualBox:~/lesson5$ sudo usermod -aG developer user10
+usermod: user 'user10' does not exist
+user@user-VirtualBox:~/lesson5$ sudo mkdir /shared
+user@user-VirtualBox:~/lesson5$ sudo chown -R :developer /shared/
+user@user-VirtualBox:~/lesson5$ ls -al /
+total 88
+drwxr-xr-x  21 root root       4096 сту 27 18:09 .
+drwxr-xr-x  21 root root       4096 сту 27 18:09 ..
+lrwxrwxrwx   1 root root          7 сту 13 17:47 bin -> usr/bin
+drwxr-xr-x   4 root root       4096 сту 13 18:39 boot
+drwxrwxr-x   2 root root       4096 сту 13 17:50 cdrom
+drwxr-xr-x  20 root root       4240 сту 27 17:33 dev
+drwxr-xr-x 130 root root      12288 сту 27 18:07 etc
+drwxr-xr-x   5 root root       4096 сту 24 01:06 home
+lrwxrwxrwx   1 root root          7 сту 13 17:47 lib -> usr/lib
+lrwxrwxrwx   1 root root          9 сту 13 17:47 lib32 -> usr/lib32
+lrwxrwxrwx   1 root root          9 сту 13 17:47 lib64 -> usr/lib64
+lrwxrwxrwx   1 root root         10 сту 13 17:47 libx32 -> usr/libx32
+drwx------   2 root root      16384 сту 13 17:47 lost+found
+drwxr-xr-x   3 root root       4096 сту 13 18:11 media
+drwxr-xr-x   2 root root       4096 жні 19 13:29 mnt
+drwxr-xr-x   3 root root       4096 сту 13 18:13 opt
+dr-xr-xr-x 257 root root          0 сту 27 17:33 proc
+drwx------   5 root root       4096 сту 27 17:33 root
+drwxr-xr-x  30 root root        820 сту 27 17:33 run
+lrwxrwxrwx   1 root root          8 сту 13 17:47 sbin -> usr/sbin
+drwxr-xr-x   2 root developer  4096 сту 27 18:09 shared
+drwxr-xr-x  11 root root       4096 сту 15 17:19 snap
+drwxr-xr-x   2 root root       4096 жні 19 13:29 srv
+dr-xr-xr-x  13 root root          0 сту 27 17:33 sys
+drwxrwxrwt  17 root root       4096 сту 27 18:05 tmp
+drwxr-xr-x  14 root root       4096 жні 19 13:32 usr
+drwxr-xr-x  14 root root       4096 жні 19 13:47 var
+user@user-VirtualBox:~/lesson5$ sudo chmod -R 2775 /shared/
+user@user-VirtualBox:~/lesson5$ ls -al / |grep shared
+drwxrwsr-x   2 root developer  4096 сту 27 18:09 shared

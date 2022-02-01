@@ -1,0 +1,62 @@
+user@user-VirtualBox:~$ pwd
+/home/user
+user@user-VirtualBox:~$ echo "Hi" > /home/user/1.log
+user@user-VirtualBox:~$ cat 1.log
+Hi
+user@user-VirtualBox:~$ cat "Hello" > filename.txt
+cat: Hello: No such file or directory
+user@user-VirtualBox:~$ cat > "hello" filename.txt
+user@user-VirtualBox:~$ cat filename.txt
+user@user-VirtualBox:~$ 
+user@user-VirtualBox:~$ 
+user@user-VirtualBox:~$ pwd
+/home/user
+user@user-VirtualBox:~$ echo "This is pattern" > filename.txt
+user@user-VirtualBox:~$ cat filename.txt 
+This is pattern
+user@user-VirtualBox:~$ cp filename.txt filename2.txt
+user@user-VirtualBox:~$ cat filename2.txt
+This is pattern
+user@user-VirtualBox:~$ mkdir -p ~/dir1/dir2/
+user@user-VirtualBox:~$ ls -l
+total 48
+-rw-rw-r-- 1 user user    3 сту 15 01:20 1.log
+drwxr-xr-x 2 user user 4096 сту 13 17:58 Desktop
+drwxrwxr-x 3 user user 4096 сту 15 01:52 dir1
+drwxr-xr-x 2 user user 4096 сту 13 17:58 Documents
+drwxr-xr-x 2 user user 4096 сту 13 17:58 Downloads
+-rw-rw-r-- 1 user user   16 сту 15 01:36 filename2.txt
+-rw-rw-r-- 1 user user   16 сту 15 01:34 filename.txt
+-rw-rw-r-- 1 user user    0 сту 15 01:32 hello
+drwxr-xr-x 2 user user 4096 сту 13 17:58 Music
+drwxr-xr-x 2 user user 4096 сту 13 17:58 Pictures
+drwxr-xr-x 2 user user 4096 сту 13 17:58 Public
+drwxr-xr-x 2 user user 4096 сту 13 17:58 Templates
+drwxr-xr-x 2 user user 4096 сту 13 17:58 Videos
+user@user-VirtualBox:~$ mv ~/^C
+user@user-VirtualBox:~$ mv ~/filename.txt ~/dir1/dir2/filename.txt
+user@user-VirtualBox:~$ cd dir2
+bash: cd: dir2: No such file or directory
+user@user-VirtualBox:~$ cd dir1
+user@user-VirtualBox:~/dir1$ cd dir2
+user@user-VirtualBox:~/dir1/dir2$ ls -l
+total 4
+-rw-rw-r-- 1 user user 16 сту 15 01:34 filename.txt
+user@user-VirtualBox:~/dir1/dir2$ cat file filename.txt
+cat: file: No such file or directory
+This is pattern
+user@user-VirtualBox:~/dir1/dir2$ file filename.txt
+filename.txt: ASCII text
+user@user-VirtualBox:~/dir1/dir2$ 
+ser@user-VirtualBox:~$ nano 5.log
+user@user-VirtualBox:~$ cat file 5.log
+cat: file: No such file or directory
+hjkjkkklklkjklmlkml
+knknlknlk
+ssfawe
+
+gjghghj
+user@user-VirtualBox:~$ file 5.log
+5.log: ASCII text
+
+
