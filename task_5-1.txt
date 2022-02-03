@@ -1,0 +1,61 @@
+user@user-VirtualBox:~$ touch file1 /lesson5
+user@user-VirtualBox:~$ cd lesson5
+user@user-VirtualBox:~/lesson5$ ls -al
+total 16
+drwxrwxr-x  2 user user 4096 сту 26 10:56 .
+drwxr-xr-x 18 user user 4096 сту 26 10:52 ..
+-rw-rw-r--  1 user user    0 сту 26 10:56 file1
+-rw-rw-r--  2 user user   34 сту 23 19:48 file2.log
+lrwxrwxrwx  1 user user    9 сту 23 19:38 file3.log -> file1.log
+-rw-rw-r--  1 user user    5 сту 23 19:39 file.log
+-rwxrw-r--  1 user user    0 сту 23 20:24 test_permut.log
+user@user-VirtualBox:~/lesson5$ vim file1
+user@user-VirtualBox:~/lesson5$ cat file1
+ghkjhuhuhk
+ghkbjbkjw
+fsjkjnsl
+kjhjk
+user@user-VirtualBox:~/lesson5$ ls -al file1
+-rw-rw-r-- 1 user user 36 сту 26 11:07 file1
+user@user-VirtualBox:~/lesson5$ cp file1 file2
+user@user-VirtualBox:~/lesson5$ ln -s  file1 file3
+user@user-VirtualBox:~/lesson5$ ln file1 file4
+user@user-VirtualBox:~/lesson5$ ls -ali
+total 28
+392173 drwxrwxr-x  2 user user 4096 сту 26 11:15 .
+420840 drwxr-xr-x 18 user user 4096 сту 26 11:07 ..
+393661 -rw-rw-r--  2 user user   36 сту 26 11:07 file1
+393628 -rw-rw-r--  1 user user   36 сту 26 11:13 file2
+392272 -rw-rw-r--  2 user user   34 сту 23 19:48 file2.log
+393654 lrwxrwxrwx  1 user user    5 сту 26 11:14 file3 -> file1
+393652 lrwxrwxrwx  1 user user    9 сту 23 19:38 file3.log -> file1.log
+393661 -rw-rw-r--  2 user user   36 сту 26 11:07 file4
+393653 -rw-rw-r--  1 user user    5 сту 23 19:39 file.log
+393671 -rwxrw-r--  1 user user    0 сту 23 20:24 test_permut.log
+user@user-VirtualBox:~/lesson5$ rm file1
+user@user-VirtualBox:~/lesson5$ ls -ali
+total 24
+392173 drwxrwxr-x  2 user user 4096 сту 26 11:27 .
+420840 drwxr-xr-x 18 user user 4096 сту 26 11:07 ..
+393628 -rw-rw-r--  1 user user   36 сту 26 11:13 file2
+392272 -rw-rw-r--  2 user user   34 сту 23 19:48 file2.log
+393654 lrwxrwxrwx  1 user user    5 сту 26 11:14 file3 -> file1
+393652 lrwxrwxrwx  1 user user    9 сту 23 19:38 file3.log -> file1.log
+393661 -rw-rw-r--  1 user user   36 сту 26 11:07 file4
+393653 -rw-rw-r--  1 user user    5 сту 23 19:39 file.log
+393671 -rwxrw-r--  1 user user    0 сту 23 20:24 test_permut.log
+user@user-VirtualBox:~/lesson5$ cat file1
+cat: file1: No such file or directory
+user@user-VirtualBox:~/lesson5$ cat file2
+ghkjhuhuhk
+ghkbjbkjw
+fsjkjnsl
+kjhjk
+user@user-VirtualBox:~/lesson5$ cat file3
+cat: file3: No such file or directory
+user@user-VirtualBox:~/lesson5$ cat file4
+ghkjhuhuhk
+ghkbjbkjw
+fsjkjnsl
+kjhjk
+

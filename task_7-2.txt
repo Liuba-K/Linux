@@ -1,0 +1,38 @@
+user@user-VirtualBox:~$ snap find jetbrains
+Name                       Version   Publisher   Notes    Summary
+pycharm-community          2021.3.2  jetbrains✓  classic  PyCharm Community Edition
+phpstorm                   2021.3.2  jetbrains✓  classic  PhpStorm
+pycharm-professional       2021.3.2  jetbrains✓  classic  PyCharm Professional Edition
+intellij-idea-community    2021.3.2  jetbrains✓  classic  Capable & Ergonomic Java IDE
+intellij-idea-ultimate     2021.3.2  jetbrains✓  classic  Capable & Ergonomic Java IDE for Enterprise, Web & Mobile Development
+webstorm                   2021.3.1  jetbrains✓  classic  WebStorm
+datagrip                   2021.3.4  jetbrains✓  classic  DataGrip
+clion                      2021.3.3  jetbrains✓  classic  A cross-platform IDE for C and C++
+pycharm-educational        2021.3.2  jetbrains✓  classic  Easy and Professional Tool to Learn & Teach Programming with Python
+rubymine                   2021.3.2  jetbrains✓  classic  The Most Intelligent Ruby and Rails IDE
+space                      2022.1.0  jetbrains✓  -        Desktop Application for JetBrains Space
+rider                      2021.3.3  jetbrains✓  classic  A fast & powerful cross-platform .NET IDE
+goland                     2021.3.3  jetbrains✓  classic  GoLand
+dataspell                  2021.3.2  jetbrains✓  classic  DataSpell
+intellij-idea-educational  2021.3.2  jetbrains✓  classic  IntelliJ IDEA Educational Edition
+kotlin                     1.6.10    jetbrains✓  classic  Command line Kotlin compiler
+user@user-VirtualBox:~$ sudo snap install pycharm-community
+[sudo] password for user:
+error: This revision of snap "pycharm-community" was published using classic confinement and thus
+       may perform arbitrary system changes outside of the security sandbox that snaps are usually
+       confined to, which may put your system at risk.
+
+       If you understand and want to proceed repeat the command including --classic.
+user@user-VirtualBox:~$ sudo snap install --classic pycharm-community
+pycharm-community 2021.3.2 from jetbrains✓ installed
+user@user-VirtualBox:~$ snap list
+Name               Version             Rev    Tracking         Publisher   Notes
+bare               1.0                 5      latest/stable    canonical✓  base
+core18             20211215            2284   latest/stable    canonical✓  base
+core20             20220114            1328   latest/stable    canonical✓  base
+gnome-3-34-1804    0+git.3556cb3       77     latest/stable/…  canonical✓  -
+gnome-3-38-2004    0+git.cd626d1       87     latest/stable    canonical✓  -
+gtk-common-themes  0.1-59-g7bca6ae     1519   latest/stable/…  canonical✓  -
+pycharm-community  2021.3.2            267    latest/stable    jetbrains✓  classic
+snap-store         3.38.0-66-gbd5b8f7  558    latest/stable/…  canonical✓  -
+snapd              2.54.2              14549  latest/stable    canonical✓  snapd

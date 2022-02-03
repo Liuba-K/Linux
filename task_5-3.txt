@@ -1,0 +1,26 @@
+ser@user-VirtualBox:~/lesson5$ echo "gjkjhkuhku hjhkh 435 jhk"> task5_3.txt
+user@user-VirtualBox:~/lesson5$ touch task5_3cp.txt
+user@user-VirtualBox:~/lesson5$ ls -al
+total 28
+drwxrwxr-x  2 user user 4096 сту 27 17:46 .
+drwxr-xr-x 19 user user 4096 сту 27 17:34 ..
+-rw-rw-r--  1 user user   36 сту 26 11:13 change_name2
+-rw-rw-r--  1 user user   36 сту 26 11:07 change_name4
+-rw-rw-r--  2 user user   34 сту 23 19:48 file2.log
+lrwxrwxrwx  1 user user    5 сту 26 11:14 file3 -> file1
+-rw-rw-r--  1 user user    5 сту 23 19:39 file.log
+-rw-rw-r--  1 user user    0 сту 27 17:46 task5_3cp.txt
+-rw-rw-r--  1 user user   25 сту 27 17:45 task5_3.txt
+-rwxrw-r--  1 user user    0 сту 23 20:24 test_permut.log
+user@user-VirtualBox:~/lesson5$ chmod g-rw task5_3cp.txt
+user@user-VirtualBox:~/lesson5$ ls -al task5_3cp.txt
+-rw----r-- 1 user user 0 сту 27 17:46 task5_3cp.txt
+user@user-VirtualBox:~/lesson5$ chmod a-r task5_3cp.txt
+user@user-VirtualBox:~/lesson5$ ls -al task5_3cp.txt
+--w------- 1 user user 0 сту 27 17:46 task5_3cp.txt
+user@user-VirtualBox:~/lesson5$ chmod u+r task5_3cp.txt
+user@user-VirtualBox:~/lesson5$ ls -al task5_3cp.txt
+-rw------- 1 user user 0 сту 27 17:46 task5_3cp.txt
+user@user-VirtualBox:~/lesson5$ chmod 664 task5_3.txt
+user@user-VirtualBox:~/lesson5$ ls -al task5_3.txt
+-rw-rw-r-- 1 user user 25 сту 27 17:45 task5_3.txt

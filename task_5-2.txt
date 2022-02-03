@@ -1,0 +1,71 @@
+ser@user-VirtualBox:~/lesson5$ ls -al
+total 24
+drwxrwxr-x  2 user user 4096 сту 26 11:33 .
+drwxr-xr-x 19 user user 4096 сту 27 16:16 ..
+-rw-rw-r--  1 user user   36 сту 26 11:13 file2
+-rw-rw-r--  2 user user   34 сту 23 19:48 file2.log
+lrwxrwxrwx  1 user user    5 сту 26 11:14 file3 -> file1
+-rw-rw-r--  1 user user   36 сту 26 11:07 file4
+-rw-rw-r--  1 user user    5 сту 23 19:39 file.log
+-rwxrw-r--  1 user user    0 сту 23 20:24 test_permut.log
+user@user-VirtualBox:~/lesson5$ mv file4 change_name4
+user@user-VirtualBox:~/lesson5$ mv file2 change_name2
+ser@user-VirtualBox:~/lesson5$ ls -ali
+total 24
+392173 drwxrwxr-x  2 user user 4096 сту 27 16:18 .
+420840 drwxr-xr-x 19 user user 4096 сту 27 16:16 ..
+393628 -rw-rw-r--  1 user user   36 сту 26 11:13 change_name2
+393661 -rw-rw-r--  1 user user   36 сту 26 11:07 change_name4
+392272 -rw-rw-r--  2 user user   34 сту 23 19:48 file2.log
+393654 lrwxrwxrwx  1 user user    5 сту 26 11:14 file3 -> file1
+393653 -rw-rw-r--  1 user user    5 сту 23 19:39 file.log
+393671 -rwxrw-r--  1 user user    0 сту 23 20:24 test_permut.log
+ser@user-VirtualBox:~/lesson5$ ln -s change_name2 link_change_name2
+user@user-VirtualBox:~/lesson5$ mv link_change_name2 /home/user/link_change_name2
+user@user-VirtualBox:~/lesson5$ cd ..
+user@user-VirtualBox:~$ ls -ali
+total 540
+420840 drwxr-xr-x 19 user user   4096 сту 27 16:28 .
+261121 drwxr-xr-x  5 root root   4096 сту 24 01:06 ..
+392134 -rw-rw-r--  1 user user      3 сту 15 01:20 1.log
+393036 -rw-rw-r--  1 user user     16 сту 24 14:01 2.log
+392167 -rw-rw-r--  1 user user     46 сту 15 02:12 5.log
+392151 -rw-rw-r--  1 user user      0 сту 15 18:29 6.log
+392183 -rw-rw-r--  1 user user      0 сту 15 18:30 7.log
+408718 -rw-------  1 user user   5969 сту 27 00:05 .bash_history
+420848 -rw-r--r--  1 user user    220 сту 13 17:51 .bash_logout
+420852 -rw-r--r--  1 user user   3771 сту 13 17:51 .bashrc
+432648 drwxr-xr-x 13 user user   4096 сту 26 22:35 .cache
+393690 -rw-rw-r--  1 user user   4647 сту 24 14:04 cat_err
+393636 -rw-rw-r--  1 user user 400118 сту 24 14:04 cat_out
+432645 drwx------ 13 user user   4096 сту 24 14:57 .config
+432655 drwxr-xr-x  2 user user   4096 сту 13 17:58 Desktop
+  6716 drwxrwxr-x  3 user user   4096 сту 15 01:52 dir1
+432659 drwxr-xr-x  2 user user   4096 сту 13 17:58 Documents
+432656 drwxr-xr-x  2 user user   4096 сту 13 17:58 Downloads
+392987 -rw-rw-r--  1 user user      0 сту 26 10:52 file1
+392163 -rw-rw-r--  1 user user     16 сту 15 01:36 filename2.txt
+432651 drwx------  3 user user   4096 сту 21 00:54 .gnupg
+392272 -rw-rw-r--  2 user user     34 сту 23 19:48 hard_link
+392161 -rw-rw-r--  1 user user      0 сту 15 01:32 hello
+392173 drwxrwxr-x  2 user user   4096 сту 27 16:28 lesson5
+ 12303 drwxrwxr-x  2 user user   4096 сту 24 21:10 lesson6
+393469 lrwxrwxrwx  1 user user     12 сту 27 16:27 link_change_name2 -> change_name2
+679455 drwxr-xr-x  3 user user   4096 сту 13 17:57 .local
+ 12273 drwx------  4 user user   4096 сту 26 22:36 .mozilla
+432660 drwxr-xr-x  2 user user   4096 сту 13 17:58 Music
+432661 drwxr-xr-x  2 user user   4096 сту 13 17:58 Pictures
+392201 prw-rw-r--  1 user user      0 сту 26 10:35 pipe_file
+420861 -rw-r--r--  1 user user    807 сту 13 17:51 .profile
+432658 drwxr-xr-x  2 user user   4096 сту 13 17:58 Public
+522255 drwxrwxr-x  2 user user   4096 сту 19 18:11 .ssh
+408716 -rw-r--r--  1 user user      0 сту 13 17:59 .sudo_as_admin_successful
+432657 drwxr-xr-x  2 user user   4096 сту 13 17:58 Templates
+391785 -rw-r-----  1 user user      5 сту 27 16:15 .vboxclient-clipboard.pid
+393816 -rw-r-----  1 user user      5 сту 27 16:15 .vboxclient-display-svga-x11.pid
+393689 -rw-r-----  1 user user      5 сту 27 16:15 .vboxclient-draganddrop.pid
+393652 -rw-r-----  1 user user      5 сту 27 16:15 .vboxclient-seamless.pid
+432662 drwxr-xr-x  2 user user   4096 сту 13 17:58 Videos
+392150 -rw-------  1 user user   4012 сту 27 00:31 .viminfo
+392805 -rw-------  1 user user     61 сту 26 10:26 .Xauthority
+

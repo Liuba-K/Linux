@@ -1,0 +1,12 @@
+user@user-VirtualBox:~$ cd /usr/local/bin
+user@user-VirtualBox:/usr/local/bin$ cd ~
+user@user-VirtualBox:~$ pwd
+/home/user
+user@user-VirtualBox:~$ ls
+Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
+user@user-VirtualBox:~$ cd Downloads
+user@user-VirtualBox:~/Downloads$ cd ~
+user@user-VirtualBox:~$ cd Templates
+user@user-VirtualBox:~/Templates$ pwd
+/home/user/Templates
+user@user-VirtualBox:~/Templates$ cd ..

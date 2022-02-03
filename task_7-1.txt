@@ -1,0 +1,101 @@
+user@user-VirtualBox:~$ sudo vim /etc/apt/sources.list
+[sudo] password for user:
+user@user-VirtualBox:~$ curl -fsSL https://nginx.org/keys/nginx_signing.key | sudo apt-key add -
+OK
+user@user-VirtualBox:~$ sudo apt update
+Hit:1 http://by.archive.ubuntu.com/ubuntu focal InRelease
+Get:2 http://nginx.org/packages/ubuntu focal InRelease [3.584 B]
+Hit:3 http://by.archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:4 http://by.archive.ubuntu.com/ubuntu focal-backports InRelease
+Hit:5 http://ppa.launchpad.net/nginx/stable/ubuntu focal InRelease
+Hit:6 http://security.ubuntu.com/ubuntu focal-security InRelease
+Fetched 3.584 B in 1s (3.261 B/s)
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+19 packages can be upgraded. Run 'apt list --upgradable' to see them.
+N: Skipping acquire of configured file 'nginx/binary-i386/Packages' as repository 'http://nginx.org/packages/ubuntu focal InRelease' doesn't support architecture 'i386'
+user@user-VirtualBox:~$ snap search nginx
+Name                       Version  Publisher   Notes  Summary
+nginx-prometheus-exporter  0.9.0    lcomellini  -      NGINX Prometheus Exporter for NGINX and NGINX Plus
+nginxrtmp-minsikl          0.1      minsikl     -      Live Streaming server based on NGINX and RTMP
+user@user-VirtualBox:~$ sudo apt-cache policy nginx
+nginx:
+  Installed: (none)
+  Candidate: 1.20.2-1~focal
+  Version table:
+     1.20.2-1~focal 500
+        500 http://nginx.org/packages/ubuntu focal/nginx amd64 Packages
+     1.20.1-1~focal 500
+        500 http://nginx.org/packages/ubuntu focal/nginx amd64 Packages
+     1.20.0-1~focal 500
+        500 http://nginx.org/packages/ubuntu focal/nginx amd64 Packages
+     1.18.0-3ubuntu1+focal2 500
+        500 http://ppa.launchpad.net/nginx/stable/ubuntu focal/main amd64 Packages
+        500 http://ppa.launchpad.net/nginx/stable/ubuntu focal/main i386 Packages
+     1.18.0-2~focal 500
+        500 http://nginx.org/packages/ubuntu focal/nginx amd64 Packages
+     1.18.0-1~focal 500
+        500 http://nginx.org/packages/ubuntu focal/nginx amd64 Packages
+     1.18.0-0ubuntu1.2 500
+        500 http://by.archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages
+        500 http://by.archive.ubuntu.com/ubuntu focal-updates/main i386 Packages
+        500 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages
+        500 http://security.ubuntu.com/ubuntu focal-security/main i386 Packages
+     1.17.10-0ubuntu1 500
+        500 http://by.archive.ubuntu.com/ubuntu focal/main amd64 Packages
+        500 http://by.archive.ubuntu.com/ubuntu focal/main i386 Packages
+user@user-VirtualBox:~$ nginx -V                                                                                                                                                                                                                Command 'nginx' not found, but can be installed with:                                                                                                                                                                                           sudo apt install nginx-core    # version 1.18.0-0ubuntu1.2, or                                                          sudo apt install nginx-extras  # version 1.18.0-0ubuntu1.2                                                              sudo apt install nginx-full    # version 1.18.0-0ubuntu1.2                                                              sudo apt install nginx-light   # version 1.18.0-0ubuntu1.2    user@user-VirtualBox:~$ sudo apt download nginx
+[sudo] password for user: 
+user@user-VirtualBox:~$ apt download nginx
+user@user-VirtualBox:~$ ls
+1.log      Downloads           nginx-1.18.0
+2.log      file1               nginx_1.18.0-0ubuntu1.2.debian.tar.xz
+5.log      filename2.txt       nginx_1.18.0-0ubuntu1.2.dsc
+6.log      hard_link           nginx_1.18.0.orig.tar.gz
+7.log      hello               nginx_1.20.2-1~focal_amd64.deb
+archives   index.html          Pictures
+art_log    lesson5             pipe_file
+cat_err    lesson6             Public
+cat_out    lesson8             script_env.sh
+Desktop    Music               Templates
+dir1       new_iptables.rules  Videos
+Documents  nginx
+user@user-VirtualBox:~$ sudo dpkg -i nginx_1.20.2-1~focal_amd64.deb
+Selecting previously unselected package nginx.
+(Reading database ... 193791 files and directories currently installed.)
+Preparing to unpack nginx_1.20.2-1~focal_amd64.deb ...
+----------------------------------------------------------------------
+
+Thanks for using nginx!
+
+Please find the official documentation for nginx here:
+* https://nginx.org/en/docs/
+
+Please subscribe to nginx-announce mailing list to get
+the most important news about nginx:
+* https://nginx.org/en/support.html
+
+Commercial subscriptions for nginx are available on:
+* https://nginx.com/products/
+
+----------------------------------------------------------------------
+Unpacking nginx (1.20.2-1~focal) ...
+Setting up nginx (1.20.2-1~focal) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/nginx.service → /lib/systemd/system/nginx.service.
+Processing triggers for systemd (245.4-4ubuntu3.15) ...
+Processing triggers for man-db (2.9.1-1) ...
+user@user-VirtualBox:~$ sudo apt list | grep nginx | grep installed
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+nginx/stable,now 1.20.2-1~focal amd64 [installed]
+user@user-VirtualBox:~$ sudo dpkg -r nginx
+(Reading database ... 193823 files and directories currently installed.)
+Removing nginx (1.20.2-1~focal) ...
+Processing triggers for man-db (2.9.1-1) ...
+
+
+
+
+ 

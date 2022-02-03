@@ -1,0 +1,20 @@
+user@user-VirtualBox:/home/user2$ id user2
+uid=1002(user2) gid=1004(user2) groups=1004(user2),1006(team1)
+user@user-VirtualBox:/home/user2$ sudo usermod -aG sudo user2
+user@user-VirtualBox:/home/user2$ id user2
+uid=1002(user2) gid=1004(user2) groups=1004(user2),27(sudo),1006(team1)
+user@user-VirtualBox:/home/user2$ sudo visudo
+user@user-VirtualBox:~$ su user2
+Password:
+user2@user-VirtualBox:/home/user$ sudo -l
+Matching Defaults entries for user2 on user-VirtualBox:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User user2 may run the following commands on user-VirtualBox:
+    (ALL) NOPASSWD: /sbin/reboot
+    (ALL : ALL) ALL
+user2@user-VirtualBox:/home/user$ sudo reboot
+[sudo] password for user2:
+user2@user-VirtualBox:/home/user$ Connection to 192.168.43.100 closed by remote host.
+Connection to 192.168.43.100 closed.
+PS C:\Users\Liuba>

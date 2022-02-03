@@ -1,0 +1,28 @@
+user@user-VirtualBox:~/lesson5$ mkdir homework
+user@user-VirtualBox:~/lesson5$ echo "gfhghjjkhj" > ~/lesson5/homework/file1
+user@user-VirtualBox:~/lesson5$ touch ~/lesson5/homework/file2
+user@user-VirtualBox:~/lesson5$ cat > ~/lesson5/homework/file3
+
+ghgjh
+hjh
+user@user-VirtualBox:~/lesson5$ vim ~/lesson5/homework/file4
+user@user-VirtualBox:~/lesson5$ ls -al ~/lesson5/homework
+total 20
+drwxrwxr-x 2 user user 4096 сту 28 22:16 .
+drwxrwxr-x 4 user user 4096 сту 28 22:08 ..
+-rw-rw-r-- 1 user user   11 сту 28 22:09 file1
+-rw-rw-r-- 1 user user    0 сту 28 22:10 file2
+-rw-rw-r-- 1 user user   11 сту 28 22:15 file3
+-rw-rw-r-- 1 user user   16 сту 28 22:16 file4
+user@user-VirtualBox:~/lesson5$ chmod -R a-r homework
+chmod: cannot read directory 'homework': Permission denied
+user@user-VirtualBox:~/lesson5$ ls -al ~/lesson5/homework
+ls: cannot open directory '/home/user/lesson5/homework': Permission denied
+user@user-VirtualBox:~/lesson5$ cat ~/lesson5/homework/
+cat: /home/user/lesson5/homework/: Permission denied
+user@user-VirtualBox:~/lesson5$ cat ~/lesson5/homework/file1
+gfhghjjkhj
+user@user-VirtualBox:~/lesson5$ ls -al ~/lesson5/homework/file1
+-rw-rw-r-- 1 user user 11 сту 28 22:09 /home/user/lesson5/homework/file1
+
+

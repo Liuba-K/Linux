@@ -1,0 +1,638 @@
+user@user-VirtualBox:~/lesson6$ mkdir -p {2010..2017}/{01..12}; touch 00{1..3}.txt
+user@user-VirtualBox:~/lesson6$ ls -al
+total 148
+drwxrwxr-x 10 user user  4096 лют  1 16:27 .
+drwxr-xr-x 19 user user  4096 лют  1 16:17 ..
+-rw-rw-r--  1 user user     0 лют  1 16:27 001.txt
+-rw-rw-r--  1 user user     0 лют  1 16:27 002.txt
+-rw-rw-r--  1 user user     0 лют  1 16:27 003.txt
+-rwxrwxr-x  1 user user   162 сту 30 23:50 0.sh
+-rwxrwxr-x  1 user user   109 сту 30 23:58 1.sh
+drwxrwxr-x 14 user user  4096 лют  1 16:27 2010
+drwxrwxr-x 14 user user  4096 лют  1 16:27 2011
+drwxrwxr-x 14 user user  4096 лют  1 16:27 2012
+drwxrwxr-x 14 user user  4096 лют  1 16:27 2013
+drwxrwxr-x 14 user user  4096 лют  1 16:27 2014
+drwxrwxr-x 14 user user  4096 лют  1 16:27 2015
+drwxrwxr-x 14 user user  4096 лют  1 16:27 2016
+drwxrwxr-x 14 user user  4096 лют  1 16:27 2017
+-rwxrwxr-x  1 user user   111 сту 31 00:11 2.sh
+-rwxrwxr-x  1 user user   127 сту 31 00:17 3.sh
+-rwxrwxr-x  1 user user   138 сту 31 00:36 4.sh
+-rwxrwxr-x  1 user user   144 сту 31 00:48 5.sh
+-rwxrwxr-x  1 user user    47 сту 31 10:08 6.sh
+-rw-rw-r--  1 user user    81 сту 31 10:35 7.sh
+-rw-rw-r--  1 user user    48 сту 31 10:36 8.sh
+-rw-rw-r--  1 user user     0 лют  1 14:29 cp
+-rwxrwxr-x  1 user user   517 сту 31 00:28 empty.sh
+-rwxrwxr-x  1 user user   118 сту 31 10:47 func.sh
+-rwxrwxr-x  1 user user    82 сту 31 17:29 func_test.sh
+-rw-r--r--  1 user user  2971 сту 31 17:29 grep2
+-rwxrwxr-x  1 user user    48 лют  1 16:12 hello1
+-rw-r--r--  1 user user  2971 сту 31 17:25 passwd_grep
+-rw-r--r--  1 user user  2977 сту 31 17:17 passwd_grepe
+-rw-rw-r--  1 user user    13 лют  1 14:35 path
+-rw-rw-r--  1 user user 18184 лют  1 11:15 ps_log
+-rw-rw-r--  1 user user     0 сту 24 21:10 pwd
+-rw-rw-r--  1 user user     8 сту 30 23:36 test.log
+-rw-rw-r--  1 user user    98 сту 31 11:19 until1.sh
+-rw-rw-r--  1 user user    72 сту 31 11:24 until2.sh
+-rw-rw-r--  1 user user    73 сту 31 10:56 while1.sh
+-rw-rw-r--  1 user user    83 сту 31 10:58 while2.sh
+user@user-VirtualBox:~/lesson6$ rm -rf 20{10..17}
+user@user-VirtualBox:~/lesson6$ rm 00{1..3}.txt
+user@user-VirtualBox:~/lesson6$ vim task_6-2.sh 
+user@user-VirtualBox:~/lesson6$ cat task_6-2.sh 
+#!/bin/bash
+for year in {2010..2017} 
+do
+  mkdir $year
+  for month in {01..12}
+  do
+    mkdir -p $year/$month
+    for file in {001..003}
+    do
+      echo "Файл "$file > $year/$month/$file.txt
+    done
+  done
+done
+user@user-VirtualBox:~/lesson6$ chmod +x task_6-2.sh
+user@user-VirtualBox:~/lesson6$ ./task_6-2.sh 
+ user@user-VirtualBox:~/lesson6$ ls -al 20{10..17}/{01..09}
+2010/01:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2010/02:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2010/03:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2010/04:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2010/05:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2010/06:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2010/07:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2010/08:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2010/09:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2011/01:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2011/02:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2011/03:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2011/04:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2011/05:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2011/06:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2011/07:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2011/08:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2011/09:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2012/01:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2012/02:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2012/03:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2012/04:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2012/05:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2012/06:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2012/07:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2012/08:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2012/09:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2013/01:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2013/02:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2013/03:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2013/04:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2013/05:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2013/06:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2013/07:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2013/08:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2013/09:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2014/01:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2014/02:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2014/03:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2014/04:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2014/05:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2014/06:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2014/07:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2014/08:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2014/09:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2015/01:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2015/02:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2015/03:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2015/04:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2015/05:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2015/06:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2015/07:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2015/08:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2015/09:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2016/01:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2016/02:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2016/03:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2016/04:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2016/05:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2016/06:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2016/07:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2016/08:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2016/09:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2017/01:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2017/02:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2017/03:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2017/04:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2017/05:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2017/06:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2017/07:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2017/08:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+2017/09:
+total 20
+drwxrwxr-x  2 user user 4096 лют  1 17:00 .
+drwxrwxr-x 14 user user 4096 лют  1 17:00 ..
+-rw-rw-r--  1 user user   13 лют  1 17:00 001.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 002.txt
+-rw-rw-r--  1 user user   13 лют  1 17:00 003.txt
+
+

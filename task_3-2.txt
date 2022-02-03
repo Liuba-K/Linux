@@ -1,0 +1,168 @@
+user@user-VirtualBox:~$ sudo groupadd team1
+user@user-VirtualBox:~$  cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,user
+tty:x:5:syslog
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:user
+floppy:x:25:
+tape:x:26:
+sudo:x:27:user
+audio:x:29:pulse
+dip:x:30:user
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+gnats:x:41:
+shadow:x:42:
+utmp:x:43:
+video:x:44:
+sasl:x:45:
+plugdev:x:46:user
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:101:
+systemd-network:x:102:
+systemd-resolve:x:103:
+systemd-timesync:x:104:
+crontab:x:105:
+messagebus:x:106:
+input:x:107:
+kvm:x:108:
+render:x:109:
+syslog:x:110:
+tss:x:111:
+bluetooth:x:112:
+ssl-cert:x:113:
+uuidd:x:114:
+tcpdump:x:115:
+avahi-autoipd:x:116:
+rtkit:x:117:
+ssh:x:118:
+netdev:x:119:
+lpadmin:x:120:user
+avahi:x:121:
+scanner:x:122:saned
+saned:x:123:
+nm-openvpn:x:124:
+whoopsie:x:125:
+colord:x:126:
+geoclue:x:127:
+pulse:x:128:
+pulse-access:x:129:
+gdm:x:130:
+sssd:x:131:
+lxd:x:132:user
+user:x:1000:
+sambashare:x:133:user
+systemd-coredump:x:999:
+vboxsf:x:134:
+user1:x:1001:
+dev1:x:1002:
+dev2:x:1003:
+user3:x:1005:
+team1:x:1006:
+user@user-VirtualBox:~$ id user3
+uid=1003(user3) gid=1005(user3) groups=1005(user3)
+user@user-VirtualBox:~$ sudo adduser user2
+Adding user `user2' ...
+Adding new group `user2' (1004) ...
+Adding new user `user2' (1002) with group `user2' ...
+Creating home directory `/home/user2' ...
+Copying files from `/etc/skel' ...
+New password:
+Retype new password:
+passwd: password updated successfully
+Changing the user information for user2
+Enter the new value, or press ENTER for the default
+        Full Name []:
+        Room Number []:
+        Work Phone []:
+        Home Phone []:
+        Other []:
+Is the information correct? [Y/n] Y
+user@user-VirtualBox:~$ id user2
+uid=1002(user2) gid=1004(user2) groups=1004(user2)
+user@user-VirtualBox:~$ sudo vim  /etc/group
+user@user-VirtualBox:~$ tail /etc/group
+sambashare:x:133:user
+systemd-coredump:x:999:
+vboxsf:x:134:
+user1:x:1001:
+dev1:x:1002:
+dev2:x:1003:
+user3:x:1005:
+team1:x:1006:
+user2:x:1004:
+team2:x:1007:
+user@user-VirtualBox:~$ sudo usermod -aG sudo user2
+user@user-VirtualBox:~$ id user2
+uid=1002(user2) gid=1004(user2) groups=1004(user2),27(sudo)
+user@user-VirtualBox:~$ sudo usermod -G team1 user2
+user@user-VirtualBox:~$ id user2
+uid=1002(user2) gid=1004(user2) groups=1004(user2),1006(team1)
+user@user-VirtualBox:~$ sudo usermod -G team2 user2
+user@user-VirtualBox:~$ id user2
+uid=1002(user2) gid=1004(user2) groups=1004(user2),1007(team2)
+user@user-VirtualBox:~$ sudo delgroup dev2
+Removing group `dev2' ...
+Done.
+user@user-VirtualBox:~$  tail  /etc/group
+user:x:1000:
+sambashare:x:133:user
+systemd-coredump:x:999:
+vboxsf:x:134:
+user1:x:1001:
+dev1:x:1002:
+user3:x:1005:
+team1:x:1006:
+user2:x:1004:
+team2:x:1007:user2,user3
+user@user-VirtualBox:~$ sudo deluser --group team2
+Removing group `team2' ...
+Done.
+user@user-VirtualBox:~$ tail  /etc/group
+lxd:x:132:user
+user:x:1000:
+sambashare:x:133:user
+systemd-coredump:x:999:
+vboxsf:x:134:
+user1:x:1001:
+dev1:x:1002:
+user3:x:1005:
+team1:x:1006:
+user2:x:1004:
+user@user-VirtualBox:~$ sudo usermod -aG team1 user3
+user@user-VirtualBox:~$ sudo usermod -aG team1 user2
+user@user-VirtualBox:~$ sudo deluser user3 team1
+Removing user `user3' from group `team1' ...
+Done.
+user@user-VirtualBox:~$ tail  /etc/group
+lxd:x:132:user
+user:x:1000:
+sambashare:x:133:user
+systemd-coredump:x:999:
+vboxsf:x:134:
+user1:x:1001:
+dev1:x:1002:
+user3:x:1005:
+team1:x:1006:user2
+user2:x:1004:

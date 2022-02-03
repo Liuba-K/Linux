@@ -1,0 +1,88 @@
+user@user-VirtualBox:~$ ls -al
+total 528
+drwxr-xr-x 17 user user   4096 сту 24 14:04 .
+drwxr-xr-x  5 root root   4096 сту 24 01:06 ..
+-rw-rw-r--  1 user user      3 сту 15 01:20 1.log
+-rw-rw-r--  1 user user     16 сту 24 14:01 2.log
+-rw-rw-r--  1 user user     46 сту 15 02:12 5.log
+-rw-rw-r--  1 user user      0 сту 15 18:29 6.log
+-rw-rw-r--  1 user user      0 сту 15 18:30 7.log
+-rw-------  1 user user   4550 сту 24 00:31 .bash_history
+-rw-r--r--  1 user user    220 сту 13 17:51 .bash_logout
+-rw-r--r--  1 user user   3771 сту 13 17:51 .bashrc
+drwxr-xr-x 12 user user   4096 сту 24 00:43 .cache
+-rw-rw-r--  1 user user   4647 сту 24 14:04 cat_err
+-rw-rw-r--  1 user user 400118 сту 24 14:04 cat_out
+drwx------ 12 user user   4096 сту 24 00:43 .config
+drwxr-xr-x  2 user user   4096 сту 13 17:58 Desktop
+drwxrwxr-x  3 user user   4096 сту 15 01:52 dir1
+drwxr-xr-x  2 user user   4096 сту 13 17:58 Documents
+drwxr-xr-x  2 user user   4096 сту 13 17:58 Downloads
+-rw-rw-r--  1 user user     16 сту 15 01:36 filename2.txt
+drwx------  3 user user   4096 сту 21 00:54 .gnupg
+-rw-rw-r--  2 user user     34 сту 23 19:48 hard_link
+-rw-rw-r--  1 user user      0 сту 15 01:32 hello
+drwxrwxr-x  2 user user   4096 сту 23 20:24 lesson5
+drwxr-xr-x  3 user user   4096 сту 13 17:57 .local
+drwxr-xr-x  2 user user   4096 сту 13 17:58 Music
+drwxr-xr-x  2 user user   4096 сту 13 17:58 Pictures
+-rw-r--r--  1 user user    807 сту 13 17:51 .profile
+drwxr-xr-x  2 user user   4096 сту 13 17:58 Public
+drwxrwxr-x  2 user user   4096 сту 19 18:11 .ssh
+-rw-r--r--  1 user user      0 сту 13 17:59 .sudo_as_admin_successful
+drwxr-xr-x  2 user user   4096 сту 13 17:58 Templates
+-rw-r-----  1 user user      5 сту 24 01:36 .vboxclient-clipboard.pid
+-rw-r-----  1 user user      5 сту 24 01:36 .vboxclient-display-svga-x11.pid
+-rw-r-----  1 user user      5 сту 24 01:36 .vboxclient-draganddrop.pid
+-rw-r-----  1 user user      5 сту 24 01:36 .vboxclient-seamless.pid
+drwxr-xr-x  2 user user   4096 сту 13 17:58 Videos
+-rw-------  1 user user     61 сту 24 13:59 .Xauthority
+user@user-VirtualBox:~$ ls -al | cut -f 1 -d " "
+total
+drwxr-xr-x
+drwxr-xr-x
+-rw-rw-r--
+-rw-rw-r--
+-rw-rw-r--
+-rw-rw-r--
+-rw-rw-r--
+-rw-------
+-rw-r--r--
+-rw-r--r--
+drwxr-xr-x
+-rw-rw-r--
+-rw-rw-r--
+drwx------
+drwxr-xr-x
+drwxrwxr-x
+drwxr-xr-x
+drwxr-xr-x
+-rw-rw-r--
+drwx------
+-rw-rw-r--
+-rw-rw-r--
+drwxrwxr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+-rw-r--r--
+drwxr-xr-x
+drwxrwxr-x
+-rw-r--r--
+drwxr-xr-x
+-rw-r-----
+-rw-r-----
+-rw-r-----
+-rw-r-----
+drwxr-xr-x
+-rw-------
+user@user-VirtualBox:~$ ls -al | cut -f 1 -d " " | sort | uniq -c
+      2 drwx------
+      3 drwxrwxr-x
+     12 drwxr-xr-x
+      2 -rw-------
+      4 -rw-r-----
+      4 -rw-r--r--
+     10 -rw-rw-r--
+      1 total
+
